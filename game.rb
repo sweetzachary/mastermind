@@ -1,3 +1,6 @@
+require './code'
+require './guess_rating'
+
 class Game
   def initialize
     @code = Code.new
@@ -24,11 +27,12 @@ class Game
   end
 
   def display
-    puts "Your guess rating #{@guess_rating}"
+    puts "Your guess rating #{@guess_rating.value}"
     puts "#{@turns} turns remaining."
   end
 
   def finished?
+    @guess_rating and
     if @guess_rating.correct?
       puts 'YOU WON!'
     elsif turns <= 0
@@ -38,3 +42,6 @@ class Game
     end
   end
 end
+
+game = Game.new
+game.run
