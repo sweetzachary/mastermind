@@ -36,4 +36,5 @@ class Game
     else
       @turns -= 1
     end
+  end
 end
