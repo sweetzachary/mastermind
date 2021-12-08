@@ -18,5 +18,9 @@ class GuessRating
     @value = value.join('')
   end
 
+  def correct?
+    @value.each_char.all? 'C'
+  end
+
   attr_reader :value
 end
