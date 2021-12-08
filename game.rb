@@ -11,7 +11,7 @@ class Game
   def run
     until finished?
       read
-      asess
+      assess
       display
     end
   end
@@ -23,8 +23,8 @@ class Game
     @guess = Guess.new(gets(4))
   end
 
-  def asess
-    @guess_rating = @code.asess(guess)
+  def assess
+    @guess_rating = @code.assess(@guess)
   end
 
   def display
@@ -34,13 +34,13 @@ class Game
 
   def finished?
     @guess_rating and
-    if @guess_rating.correct?
-      puts 'YOU WON!'
-    elsif turns <= 0
-      puts 'YOU LOST'
-    else
-      @turns -= 1
-    end
+      if @guess_rating.correct?
+        puts 'YOU WON!'
+      elsif @turns <= 0
+        puts 'YOU LOST'
+      else
+        @turns -= 1
+      end
   end
 end
 
