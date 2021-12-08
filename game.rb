@@ -20,7 +20,7 @@ class Game
 
   def read
     puts 'Enter a guess consisting of 4 numbers from 1 to 6 each.'
-    @guess = Guess.new(gets(4))
+    @guess = Guess.new(gets.chomp)
   end
 
   def assess
@@ -36,10 +36,13 @@ class Game
     @guess_rating and
       if @guess_rating.correct?
         puts 'YOU WON!'
+        true
       elsif @turns <= 0
         puts 'YOU LOST'
+        true
       else
         @turns -= 1
+        false
       end
   end
 end
