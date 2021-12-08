@@ -1,5 +1,6 @@
 require './code'
 require './guess_rating'
+require './guess'
 
 class Game
   def initialize
