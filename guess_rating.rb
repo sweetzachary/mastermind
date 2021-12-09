@@ -1,5 +1,10 @@
 class GuessRating
-  def initialize(code, guess)
+  def initialize(code, guess, str: nil)
+    if str
+      @value = str
+      @value.upcase!
+      return
+    end
     tmp = code.clone
     @value = guess.split('').zip(tmp.split('')).map do |guess, code|
       if guess == code
