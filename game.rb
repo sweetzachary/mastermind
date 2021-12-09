@@ -9,6 +9,7 @@ class Game
   end
 
   def run
+    welcome
     until finished?
       read
       assess
@@ -17,6 +18,10 @@ class Game
   end
 
   private
+
+  def welcome
+    puts 'Welcome to the game of Mastermind! Refer to README.md for information.'
+  end
 
   def read
     puts 'Enter a guess consisting of 4 numbers from 1 to 6 each.'
